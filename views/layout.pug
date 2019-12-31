@@ -1,36 +1,66 @@
 doctype html
 html
-	head
-		title #{title} | Inventory
+    head
+        title #{title} | Web Inventory
 
-		meta(
-			name='viewport'
-			content='width=device-width, initial-scale=1, shrink-to-fit=no'
-		)
+        meta(
+            name='viewport'
+            content='width=device-width, initial-scale=1, shrink-to-fit=no'
+        )
 
-		link(rel='stylesheet', href='/stylesheets/style.css')
-		link(
-			rel='stylesheet'
-			href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh'
-			crossorigin='anonymous'
-		)
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(
+            rel='stylesheet'
+            href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh'
+            crossorigin='anonymous'
+        )
 
-	body.container
+    body
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+            a.navbar-brand(href='/') Web Inventory
 
-		block content
+            button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                span.navbar-toggler-icon
 
-		script(
-			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-			crossorigin="anonymous"
-		)
-		script(
-			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-			crossorigin="anonymous"
-		)
-		script(
-			src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-			crossorigin="anonymous"
-		)
+            div#navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                    li.nav-item
+                        a.nav-link(href='/') Index
+                    li.nav-item
+                        a.nav-link(href='/view-sales') View Sales
+                    li.nav-item
+                        a.nav-link(href='/view-purchases') View Purchases
+
+                form(method='get' action='/new-transaction')
+                    button.btn.btn-outline-primary New Transaction
+
+                span.mr-1.ml-1
+
+                form(method='post' action='/clear-transactions')
+                    button.btn.btn-outline-danger(type='submit') Clear Transactions
+
+        div.container
+            header.pt-5.pb-5
+                h1.display-4.text-center #{title}
+
+            main.mt-3
+                block content
+
+            footer.mt-3
+                small.text-muted Copyright © #{new Date().getFullYear()} Company. All rights reserved.
+
+        script(
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"
+        )
+        script(
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        )
+        script(
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        )

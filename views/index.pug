@@ -1,33 +1,23 @@
 extends layout
 
 block content
-	header.pt-5.pb-5
-		h1.display-4.text-center Web Inventory
-
-	main.mt-3
-		a(href='/').btn.btn-primary New Transaction
-
-		table.table.table-bordered.table-striped.table-hover.mt-3
-			thead
-				tr
-					th(scope='col') #
-					th(scope='col') Item
-					th(scope='col') @
-					th(scope='col') Qty
-					th(scope='col') Total
-			tbody
-				tr
-					th(scope='row') 1
-					td Paper
-					td 10.000
-					td 100
-					td 1.000.000
-				tr
-					th(scope='row') 2
-					td Printer
-					td 2.000.000
-					td 50
-					td 10.000.000
-				tr
-					th(scope='row' colspan='4') Total Inventory
-					td 11.000.000
+    table.table.table-bordered.table-striped.table-hover.mt-3
+        thead
+            tr
+                th(scope='col') No.
+                th(scope='col') Item Name
+                th(scope='col') Date (MM/DD/YYYY)
+                th(scope='col') Transaction Type
+                th(scope='col') Quantity
+                th(scope='col') Price per Item
+                th(scope='col') Total
+        tbody
+            each item in data
+                tr
+                    th(scope='row')= item.id
+                    td= item.item_name
+                    td= new Date(item.date).toLocaleDateString()
+                    td= item.transaction_type
+                    td.text-right= item.quantity
+                    td.text-right= item.price_per_item
+                    td.text-right= item.total_price

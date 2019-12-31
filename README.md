@@ -12,5 +12,3 @@ A mini Express project
 ## Note
 
 `Commands` may differ depending on your OS.
-
-**This project is unfinished due to my development environment being unsupportive**

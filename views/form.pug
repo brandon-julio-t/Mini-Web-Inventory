@@ -1,0 +1,47 @@
+extends layout
+
+block content
+
+
+    form(method='post' action='/new-transaction')
+
+        div.form-group
+            label&attributes({ 'for': 'transaction_type' }) Transaction Type
+            select(name='transaction_type').form-control
+                option(value='1') Purchase
+                option(value='2') Sale
+
+        div.form-group
+            label&attributes({ 'for': 'item_name' }) Item Name
+            input(name='item_name').form-control
+            if (item_name_error)
+                small.form-text.text-danger Item name must be filled.
+
+        div.form-group
+            label&attributes({ 'for': 'quantity' }) Quantity
+            input(name='quantity' type='number').form-control
+            if (quantity_error)
+                small.form-text.text-danger Quantity must be more than 0.
+
+        div.form-group
+            label&attributes({ 'for': 'price_per_item' }) Price per Item ($)
+            input(name='price_per_item' type='number').form-control
+            if (price_error)
+                small.form-text.text-danger Price must be more than 0.
+
+        div.form-group
+            label&attributes({ 'for': 'date' }) Date
+            div.row
+                div.col
+                    input(name='date_day' type='number' placeholder='dd').form-control
+                div.col
+                    input(name='date_month' type='number' placeholder='mm').form-control
+                div.col
+                    input(name='date_year' type='number' placeholder='yyyy').form-control
+            if (date_error)
+                small.form-text.text-danger Invalid date.
+
+        div.btn-group(role='group' aria-label='Action buttons')
+            button.btn.btn-primary(type='submit') Submit
+            button.btn.btn-secondary(type='reset') Clear
+            a.btn.btn-danger.text-white(href='/') Cancel
