@@ -12,9 +12,9 @@ block content
                 th(scope='col') Price per Item
                 th(scope='col') Total
         tbody
-            each item in data
+            each item, i in data
                 tr
-                    th(scope='row')= item.id
+                    th(scope='row')= i + 1
                     td= item.item_name
                     td= new Date(item.date).toLocaleDateString()
                     td= item.transaction_type
