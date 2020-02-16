@@ -1,3 +1,6 @@
+[![](https://img.shields.io/badge/Status-Finished-brightgreen)]()
+[![](https://img.shields.io/github/last-commit/brandon-julio-t/Mini-Web-Inventory)]()
+
 # mini-web-inventory
 
 A mini Express project
