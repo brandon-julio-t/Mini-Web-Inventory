@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/Status-Finished-brightgreen)]()
+[![](https://img.shields.io/badge/status-Finished-brightgreen)]()
 [![](https://img.shields.io/github/last-commit/brandon-julio-t/Mini-Web-Inventory)]()
 
 # mini-web-inventory
