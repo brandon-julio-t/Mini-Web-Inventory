@@ -1,11 +1,9 @@
 [![](https://img.shields.io/badge/status-Finished-brightgreen)]()
 [![](https://img.shields.io/github/last-commit/brandon-julio-t/Mini-Web-Inventory)]()
 
-# mini-web-inventory
+# Mini Web Inventory
 
-A mini Express project
-
-## WHat I Implemented
+## What I Implemented
 
 - Implemented CRUD action
 - Uses [Express Generator](https://expressjs.com/en/starter/generator.html) to generate the project
